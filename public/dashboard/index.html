@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mealmate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style-dashboard.css" rel="stylesheet">
+    <link href="/../navbar.css" rel="stylesheet">
+</head>
+<body onload="move(40)"> <!-- Running move() function to set process bar) -->
+<script src="dashboard.js"></script>
+    <header>
+        <a href="/dashboard"><img src="/IMG/logo.svg" alt="Mealmate" width="300" height="50"></a> <!-- Clickable logo -->
+        <div id="nav-placeholder">
+        </div>
+        <script src="/../navbar.js"></script>
+    </header>
+<main>
+    <section id="module1">
+        <h2 id="username"></h2>
+        <p>This is your statistics for current week:</p>
+        <h4>Wasted food in kg</h4>
+        <div id="myProgress">
+            <div id="myBar"></div>
+        </div>
+        <p>You have wasted {amount} kg of food this week!</p>
+        <p id="p_sameline">This amount is {average - amount}<p id="p_red">&nbsp;higher</p>/<p id="p_green">lower&nbsp;</p>than the average consumer wastes in Denmark</p>
+    </section>
+    <section id="module2">
+        <h2>Soon to expire</h2>
+        <div id="container">
+        </div>
+    </section>
+    <section id="module3">
+        <h2>Recipes</h2>
+        <div id="recipeContainer">
+        </div>
+    </section>
+</main>
+<footer>
+    <a href="https://github.com/TheCodeCrusaders/MealMate">Open Source Project</a>
+</footer>
+
+<script>
+    
+</script>
+</body>
+</html>

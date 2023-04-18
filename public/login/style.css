@@ -1,0 +1,56 @@
+body {
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+.box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 500px;
+  }
+  
+  .box form {
+    padding-right: 20px;
+  }
+  
+  .box h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .box label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .box input {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px;
+  }
+  
+
+  .box button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+  }
+
+  .box button:hover {
+    background-color: #0056b3;
+  }

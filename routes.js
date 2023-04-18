@@ -3,8 +3,10 @@ const router = express.Router();
 import connectDB from './db.js';
 import UserProfile from './models/userInfo.js';
 import crypto from 'crypto';
+import { ObjectId } from 'mongodb';
 
-import { checkSession, generateSessionToken } from './myFunctions';
+
+import { checkSession, generateSessionToken } from './myFunctions/index.js';
 
 
 const SESSION_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
@@ -34,7 +36,7 @@ const SESSION_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
     }
   });
 
-  router.post('/api/login', async (req, res) => {
+  router.post('/login', async (req, res) => {
     try {
         const db = await connectDB();
         const userDetails = {
@@ -51,14 +53,28 @@ const SESSION_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
             await db.collection('sessions').insertOne({ sessionToken, userId: user._id, expires: sessionExpiration }) ;
             // Set a cookie with the session token and redirect the user to the dashboard
             res.cookie('session', sessionToken, { expires: sessionExpiration, httpOnly: true});
-            res.redirect('/dashboard');
+            res.json({ success: true });
         }
     } catch (error) {
         console.log("Error logging in:", error);
         res.json({ error: 'Unknown error' });
       }
+});
 
-})
+router.get('/session', checkSession, async (req, res) => {
+  try {
+    const db = await connectDB();
+    const userId = new ObjectId(req.session.userId); // Convert string to ObjectId
+    console.log('session:', req.session);
+    const user = await db.collection('users').findOne({ _id: userId });
+    res.json(user);
+  } catch (error) {
+    console.log('Error retrieving user session:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+  
+
 
   
 

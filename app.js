@@ -2,6 +2,10 @@ import express from 'express';
 const app = express();
 import router from './routes.js';
 import connectDB from './db.js';
+import cookieParser from 'cookie-parser';
+
+// Parse cookies from incoming requests
+app.use(cookieParser());
 
 app.use(express.static("public"));
 app.set("port", process.env.PORT || 3000);
