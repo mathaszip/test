@@ -65,7 +65,7 @@ router.get('/session', checkSession, async (req, res) => {
   try {
     const db = await connectDB();
     const userId = new ObjectId(req.session.userId); // Convert string to ObjectId
-    console.log('session:', req.session);
+    console.log('Request from session:', req.session.username);
     const user = await db.collection('users').findOne({ _id: userId });
     res.json(user);
   } catch (error) {
@@ -74,7 +74,10 @@ router.get('/session', checkSession, async (req, res) => {
   }
 });
   
-
+router.get('/API/protectedRoute', checkSession, (req, res) => {
+  // If the user is authenticated, return a success message
+  res.send('You are authenticated!');
+});
 
   
 
