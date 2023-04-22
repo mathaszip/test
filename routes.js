@@ -98,8 +98,6 @@ async function getShoppinglist(req) {
   }
 }
 
-
-
 router.post("/API/shoppingList/addNewItem", checkSession, async (req, res) => {
   try {
     const db = await connectDB();
@@ -162,15 +160,6 @@ router.post("/API/shoppingList/checkItem/:id", checkSession, async (req, res) =>
   }
 })
 
-
-
-
-
-
-
-
-
-
 router.delete("/API/shoppingList/deleteItem/:id", checkSession, async (req, res) => {
   try {
     const db = await connectDB();
@@ -189,9 +178,6 @@ router.delete("/API/shoppingList/deleteItem/:id", checkSession, async (req, res)
     res.status(500).send('Internal server error');
   }
 });
-
-
-
 
 router.get("/API/shoppingList/getProductPrices", async (req, res) => {
   const { query } = req.query;
@@ -215,6 +201,44 @@ if (!data || !data.suggestions || data.suggestions.length === 0) {
   res.json(data);
 });
 
-  
+router.post("/API/changePassword", checkSession, async (req, res) => {
+  const userDetails = {
+    oldPassword: crypto.createHash('sha256').update(req.body.oldPassword).digest('hex'),
+    newPassword1: crypto.createHash('sha256').update(req.body.newPassword1).digest('hex'),
+    newPassword2: crypto.createHash('sha256').update(req.body.newPassword2).digest('hex')
+  };
+
+  try {
+    const db = await connectDB();
+    const user = await db.collection('users').findOne({ _id: req.session.userId });
+
+    // Check if the old password matches with the user's password and check if the new password and confirm password match
+    if (user.password !== userDetails.oldPassword) {
+      return res.status(400).json({ error: 'Old password is incorrect!' });
+    } else if (userDetails.newPassword1 !== userDetails.newPassword2) {
+      return res.status(400).json({ error: 'The new password doesnt match!' });
+    } else {
+      await db.collection('users').updateOne({ _id: req.session.userId }, { $set: { password: userDetails.newPassword1 } });
+      return res.json({ success: true });
+    }
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+router.post("/API/logout", async (req, res) => {
+  try {
+    const db = await connectDB();
+    await db.collection('sessions').deleteOne({ sessionToken: req.cookies.session });
+    res.clearCookie('session');
+    res.json({ success: true });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
 
 export default router;

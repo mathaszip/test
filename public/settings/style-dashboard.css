@@ -1,0 +1,303 @@
+body {
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+header {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+h1 {
+    margin: 0;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#p_sameline {
+    display: inline-block;
+}
+
+#p_green {
+    color: green;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#p_red {
+    color: red;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+section {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin: 20px;
+    width: calc(33.33% - 80px);
+    position: relative;
+    top: -100px;
+    opacity: 0;
+    animation-name: fall;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+
+}
+
+@keyframes fall {
+    from {
+        top: -50px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1100px) {
+    section {
+        width: 100%;
+    }
+}
+
+#module1 {
+    background-color: #f2f2f2;
+}
+#module2 {
+    background-color: #e6e6ff;
+}
+#module3 {
+    background-color: #ffffcc;
+}
+footer {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+
+
+
+
+#myProgress {
+    width: 100%;
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin: 10px 0;
+}
+
+#myBar {
+    width: 0%;
+    height: 30px;
+    background-color: green;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.tab button {
+  background-color: inherit;
+  width: 50%; /* Set the width of each button to 50% */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  float: left; /* Float the buttons to the left */
+}
+
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+
+/*
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; 
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 12px;
+  }
+  
+  th {
+    background-color: #fff; 
+    position: sticky;
+    top: 0;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #fff; 
+  }
+  
+  @media only screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+  
+    thead {
+      display: none;
+    }
+  
+    tr {
+      margin-bottom: 20px;
+      display: block;
+      border-bottom: 2px solid #ddd;
+    }
+  
+    td {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      border-bottom: 1px dotted #ccc;
+      padding: 10px 0;
+    }
+  
+    td:before {
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+  */
+
+  /* Table container */
+ 
+
+
+  /* Table container */
+  
+
+  /* Table container */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  border-radius: 10px; /* Add rounded edges to table */
+}
+
+/* Table headers */
+table th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Table rows */
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+/* Table cells */
+table td {
+  padding: 8px;
+  text-align: left;
+}
+
+/* Table border */
+table th, table td {
+  border: 1px solid #ddd;
+}
+
+body {
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+.box {
+  background-color: #e6e6ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 500px;
+}
+
+.box form {
+  padding-right: 20px;
+}
+
+.box h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.box label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.box input {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: block;
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+}
+
+
+.box button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+}
+
+.box button:hover {
+  background-color: #0056b3;
+}

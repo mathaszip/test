@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mealmate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style-dashboard.css" rel="stylesheet">
+    <link href="/../navbar.css" rel="stylesheet">
+</head>
+<body onload="move(40)"> <!-- Running move() function to set process bar) -->
+<script src="settings.js"></script>
+    <header>
+        <a href="/dashboard"><img src="/IMG/logo.svg" alt="Mealmate" width="300" height="50"></a> <!-- Clickable logo -->
+        <div id="nav-placeholder">
+        </div>
+        <script src="/../navbar.js"></script>
+    </header>
+<main>
+    <section id="module1">
+        <h2 id="settings">This is your user settings:</h2>
+        <table>
+            <tr>
+                <th>Username</th>
+                <td id="username-placeholder"></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td id="email-placeholder"></td>
+            </tr>
+            <tr>
+                <th>Date of birth</th>
+                <td id="date-of-birth-placeholder"></td>
+            </tr>
+        </table>
+
+
+
+
+
+        
+    </section>
+    <section id="module2">
+        <div class="box">
+            <h1>Change your password</h1>
+            <form id="myForm">
+                <label for="old-password">Old Password:</label>
+                <input type="password" id="old-password" name="old-password">
+              
+              
+              
+                <label for="new-password">New Password:</label>
+                <input type="password" id="new-password" name="new-password">
+              
+              
+              
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password">
+
+                <p id="message" name="message" style="text-align: center"></p>
+              
+              
+              
+                <button type="submit">Submit</button>
+              </form>
+        </div>
+    </section>
+    <section id="module3">
+    </section>
+</main>
+<footer>
+    <a href="https://github.com/TheCodeCrusaders/MealMate">Open Source Project</a>
+</footer>
+
+<script>
+    
+</script>
+</body>
+</html>
