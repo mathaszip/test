@@ -6,6 +6,13 @@ const itemSchema = new mongoose.Schema({
     place: { type: String, required: true }
   });
 
+const shoppingListSchema = new mongoose.Schema({
+    id: { type: String, required: true },
+    name: { type: String, required: true},
+    price: { type: String, required: true},
+    bought: { type: Boolean, required: true}
+})
+
 const userProfileSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -28,7 +35,8 @@ const userProfileSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    items: [itemSchema]
+    items: [itemSchema],
+    shoppingList: [shoppingListSchema]
   });
   
   const UserProfile = mongoose.model('UserProfile', userProfileSchema);

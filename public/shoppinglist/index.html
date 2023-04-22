@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mealmate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style-dashboard.css" rel="stylesheet">
+    <link href="/../navbar.css" rel="stylesheet">
+</head>
+
+    <header>
+        <a href="/dashboard"><img src="/IMG/logo.svg" alt="Mealmate" width="300" height="50"></a> <!-- Clickable logo -->
+        <div id="nav-placeholder">
+        </div>
+        <script src="/../navbar.js"></script>
+    </header>
+<main>
+
+    <section id="shoppinglist-input-form">
+        <table id="shoppinglist-table">
+            <tr>
+              <th>Search for items to input</th>
+              <th></th>
+            </tr>
+            <tr>
+              <form id="shoppinglist-form">
+                <td><input id="shoppinglist-input" name="shoppinglist-input" placeholder="Name of product"></td>
+                <td><button type="submit" id="shoppinglist-add" name="shoppinglist-add">Search</button></td>
+              </form>
+            </tr>
+          </table>
+          <div id="shoppinglist-search">
+            <table id="shoppinglist-search-table">
+                <!-- Table content -->
+            </table>
+          </div>
+    </section>
+    <section id="shoppinglist-module">
+        <div id="shoppinglist-placeholder">
+            <table id="shoppinglist">
+                <!-- Table content -->
+            </table>
+          </div>
+          <div id="input">
+            <div id="backdrop">
+            </div>
+    
+            <form id="itemForm">
+              <label for="location">Location:</label>
+              <select id="location" name="location">
+                <option value="fridge" selected>Fridge</option>
+                <option value="pantry">Pantry</option>
+                <option value="other">Other</option>
+              </select><br /><br />
+    
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Item name" /><br /><br /> <!--placeholder added-->
+              <div id="autocomplete-list"></div>                                              <!--div added-->
+              <label for="expirationDate">Expiration Date:</label>
+              <input type="date" id="expirationDate" name="expirationDate" /><br /><br />    
+              <button type="submit">Import to personal item list</button>
+            </form>
+          </div>
+    </section>
+</main>
+<footer>
+    <a href="https://github.com/TheCodeCrusaders/MealMate">Open Source Project</a>
+</footer>
+<script src="shoppinglist.js"></script>
+</body>
+</html>
